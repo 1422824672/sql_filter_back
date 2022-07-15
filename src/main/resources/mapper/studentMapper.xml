@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sql_filter.mapper.StudentMapper">
+
+    <!-- 根据主键id查询用户 -->
+    <select id="queryList" parameterType="String" resultType="com.example.sql_filter.model.vo.SqlVO">
+        select
+        id as id,
+        stu_Id as stuId,
+        name as name,
+        class as classes
+        from
+        student
+        where
+        ${param}
+    </select>
+
+</mapper>
